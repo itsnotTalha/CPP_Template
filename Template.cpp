@@ -16,14 +16,13 @@ typedef pair<int, int> pii;
 #define sortall(x) sort(all(x))
 #define sz(x) int(x.size())
 
-// Loops
 #define for0(i, n) for (int i = 0; i < int(n); i++)
 #define FOR(i, x, y) for (int i = int(x); i <= int(y); i++)
 #define ROF(i, x, y) for (int i = int(x); i >= int(y); i--)
 
 
 
-// Input Macros
+ 
 #define si(x) scanf("%d", &x)
 #define sii(x, y) scanf("%d %d", &x, &y)
 #define siii(x, y, z) scanf("%d %d %d", &x, &y, &z)
