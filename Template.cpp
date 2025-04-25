@@ -30,13 +30,25 @@ typedef pair<int, int> pii;
 #define sll(x, y) scanf("%lld %lld", &x, &y)
 #define slll(x, y, z) scanf("%lld %lld %lld", &x, &y, &z)
 
-/*
+bool isPrime(int n){
+    int cnt = 0;
+    if (n <= 1)
+    return true;
+else {
+
+    for (int i = 2; i * i <= n; i++) {
+        if (n % i == 0)
+            cnt++;
+    }
+    if (cnt > 0)
+        return false;
+    else
+        return true;
+  }
+}
+
+
 int main() {
     Fast_io;
-    int n; cin >> n;
-    vi a(n); cin >> a;
-    sortall(a);
-    cout << a << '\n';
-    return 0;
+    
 }
-*/
