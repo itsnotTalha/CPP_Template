@@ -30,6 +30,55 @@ typedef pair<int, int> pii;
 #define sll(x, y) scanf("%lld %lld", &x, &y)
 #define slll(x, y, z) scanf("%lld %lld %lld", &x, &y, &z)
 
+const ll M = 100001;
+bool primes[M + 1];
+
+void printArray(int N)
+{
+    if (N == 2) {
+        cout << -1 << endl;
+        return;
+    }
+ 
+    for (int i = 0; i < M; i++)
+        primes[i] = 1;
+    primes[0] = 0;
+    primes[1] = 0;
+ 
+    for (int i = 2; i * i <= M; i++) {
+        if (primes[i] == 1) {
+            for (int j = i * i; j <= M;
+                 j += i) {
+                primes[j] = 0;
+            }
+        }
+    }
+ 
+    vector<int> v;
+    for (int i = 0; i < M; i++) {
+        if (v.size() < N
+            && primes[i] == 1) {
+            v.push_back(i);
+        }
+    }
+ 
+    int product = 1;
+    vector<int> answer;
+ 
+    for (auto it : v) {
+        product *= it;
+    }
+ 
+    for (int i = 0; i < N; i++) {
+        int num = product / v[i];
+        answer.push_back(num);
+    }
+ 
+    for (int i = 0; i < N; i++) {
+        cout << answer[i] << " ";
+    }
+}
+
 bool isPrime(int n){
     int cnt = 0;
     if (n <= 1)
