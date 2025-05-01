@@ -17,12 +17,10 @@ typedef pair<int, int> pii;
 #define sz(x) int(x.size())
 
 #define for0(i, n) for (int i = 0; i < int(n); i++)
+#define for1(i, n) for (int i = 1; i <= int(n); i++)
 #define FOR(i, x, y) for (int i = int(x); i <= int(y); i++)
 #define ROF(i, x, y) for (int i = int(x); i >= int(y); i--)
 
-
-
- 
 #define si(x) scanf("%d", &x)
 #define sii(x, y) scanf("%d %d", &x, &y)
 #define siii(x, y, z) scanf("%d %d %d", &x, &y, &z)
@@ -30,74 +28,10 @@ typedef pair<int, int> pii;
 #define sll(x, y) scanf("%lld %lld", &x, &y)
 #define slll(x, y, z) scanf("%lld %lld %lld", &x, &y, &z)
 
-const ll M = 100001;
-bool primes[M + 1];
-
-void printArray(int N)
-{
-    if (N == 2) {
-        cout << -1 << endl;
-        return;
-    }
- 
-    for (int i = 0; i < M; i++)
-        primes[i] = 1;
-    primes[0] = 0;
-    primes[1] = 0;
- 
-    for (int i = 2; i * i <= M; i++) {
-        if (primes[i] == 1) {
-            for (int j = i * i; j <= M;
-                 j += i) {
-                primes[j] = 0;
-            }
-        }
-    }
- 
-    vector<int> v;
-    for (int i = 0; i < M; i++) {
-        if (v.size() < N
-            && primes[i] == 1) {
-            v.push_back(i);
-        }
-    }
- 
-    int product = 1;
-    vector<int> answer;
- 
-    for (auto it : v) {
-        product *= it;
-    }
- 
-    for (int i = 0; i < N; i++) {
-        int num = product / v[i];
-        answer.push_back(num);
-    }
- 
-    for (int i = 0; i < N; i++) {
-        cout << answer[i] << " ";
-    }
-}
-
-bool isPrime(int n){
-    int cnt = 0;
-    if (n <= 1)
-    return true;
-else {
-
-    for (int i = 2; i * i <= n; i++) {
-        if (n % i == 0)
-            cnt++;
-    }
-    if (cnt > 0)
-        return false;
-    else
-        return true;
-  }
-}
-
+#define ip(a, n) for0(i, n) cin >> a[i]
 
 int main() {
     Fast_io;
-    
+
+    return 0;
 }
